@@ -1,0 +1,22 @@
+{
+  "tool": "Built-in image_gen",
+  "date": "2026-10-11",
+  "description": "AI-generated photorealistic sample product imagery; not vendor photography or a depiction of branded inventory. Alpha preserved in optimized 800px WebP files. Original SVG references retained.",
+  "promptTemplate": "Use case: product-mockup. Asset type: supermarket catalog product cutout. Subject: {subject}. Style: photorealistic professional studio product photography, authentic natural texture, soft daylight from upper left, realistic proportions, three-quarter front view. Composition: single centered product arrangement completely visible with 12 percent empty transparent margin, square image. True transparent background. No backdrop, no scenery, no typography, no logos, no watermarks, no illustration, no 3D render. Match a cohesive premium fresh grocery catalog series.",
+  "subjects": {
+    "strawberries": "A generous small pile of ripe red strawberries, several with fresh green leaves, one halved strawberry in front",
+    "milk": "One clear glass one-liter bottle filled with fresh white milk, simple white screw cap, no label",
+    "bread": "One rustic round sourdough loaf with a crisp golden scored crust and two thick slices resting beside it",
+    "eggs": "Six natural brown eggs in a small open recycled beige pulp egg carton",
+    "yogurt": "One simple open white yogurt tub filled with thick plain white yogurt, foil lid peeled back, no label",
+    "doogh": "One one-liter clear plastic bottle filled with white traditional yogurt drink, green screw cap, tiny mint leaves beside it, no label",
+    "laundry": "One red two-liter laundry liquid detergent bottle, realistic molded plastic handle and red measuring cap, a simple blank cream label, no text",
+    "dishes": "One translucent yellow 750ml dishwashing liquid bottle, green flip top cap, simple blank cream label, half a lemon beside it, no text",
+    "oranges": "Three ripe oranges with natural textured skin and a fresh green leaf, one orange sliced in half in front"
+  },
+  "categoryPromptTemplate": "Use case: product-mockup. Asset type: supermarket category photo. Subject: {subject}. Photorealistic studio product photography with authentic textures and soft daylight from upper left, three-quarter front view, entire arrangement centered and completely visible with generous transparent margin. Square composition, true transparent background. No text, logos, watermarks, illustration or 3D render. Match a fresh grocery catalog photo series.",
+  "categorySubjects": {
+    "snacks": "An opened neutral unbranded kraft bag of potato chips with a small pile of golden crispy potato chips in front",
+    "nuts": "A small heap of pistachios, almonds and walnuts with a few split pistachios showing green kernels"
+  }
+}
