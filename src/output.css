@@ -2795,15 +2795,21 @@
       padding-inline: max(12px, env(safe-area-inset-left)) max(12px, env(safe-area-inset-right));
     }
     .navbar {
-      padding: 6px;
+      padding: 4px;
     }
     .nav-item {
+      min-height: 60px;
+      padding-block: 4px;
       font-size: clamp(9px, 2.45vw, 11px);
-      gap: 4px;
+      gap: 2px;
+    }
+    .nav-item svg {
+      width: 21px;
+      height: 21px;
     }
     .nav-item span {
       max-width: 100%;
-      min-height: 28px;
+      min-height: 22px;
       display: flex;
       align-items: center;
       justify-content: center;
@@ -3342,6 +3348,7 @@
   @media (max-width: 680px) {
     :root {
       --section-space: 32px;
+      --nav-clearance: calc(100px + env(safe-area-inset-bottom, 0px));
     }
     .site-header {
       padding-bottom: 8px;
@@ -3360,40 +3367,57 @@
       margin-bottom: 16px;
     }
     .promotion-slide {
-      grid-template-rows: auto 180px;
+      grid-template-rows: auto 140px;
     }
     .promotion-copy {
-      padding: 20px 20px 0;
+      padding: 16px 16px 0;
     }
     .promotion-copy h2 {
-      font-size: clamp(26px, 6vw, 34px);
+      font-size: clamp(24px, 5.5vw, 30px);
+      margin-block: 8px;
+      line-height: 1.4;
+    }
+    .campaign-label {
+      font-size: 11px;
+    }
+    .campaign-cta {
+      min-height: 44px;
+      padding-inline: 14px;
+      font-size: 12px;
+    }
+    .campaign-note {
+      display: none;
+    }
+    .promotion-footer {
+      display: none !important;
     }
     .campaign-description {
-      line-height: 1.8;
-      margin-bottom: 12px;
+      font-size: 12px;
+      line-height: 1.75;
+      margin-bottom: 8px;
     }
     .promotion-assortment {
-      height: 180px;
-      width: min(86%, 300px);
+      height: 140px;
+      width: min(80%, 260px);
     }
     .promotion-art > img {
-      height: 180px;
-      width: 240px;
+      height: 140px;
+      width: 200px;
     }
     .art-orbit {
-      width: 150px;
-      height: 150px;
+      width: 120px;
+      height: 120px;
     }
     .art-orbit--two {
-      width: 180px;
-      height: 180px;
+      width: 140px;
+      height: 140px;
     }
     .art-sticker, .promotion-slide--offers .art-sticker {
       left: 16px;
       top: 12px;
-      width: 60px;
-      height: 60px;
-      font-size: 20px;
+      width: 52px;
+      height: 52px;
+      font-size: 18px;
     }
     .art-spark--one {
       right: 18px;
@@ -3403,8 +3427,23 @@
       left: 30px;
       bottom: 20px;
     }
-    .carousel-toolbar {
-      padding: 8px;
+    .promotion-carousel > .carousel-toolbar {
+      flex-direction: row;
+      min-height: 52px;
+      padding: 4px 8px;
+      gap: 0;
+    }
+    .promotion-carousel .carousel-navigation {
+      gap: 0;
+    }
+    .promotion-carousel .carousel-play {
+      position: absolute;
+      bottom: 60px;
+      inset-inline-end: 12px;
+      background: #fffffff0;
+    }
+    .promotion-carousel .art-spark--two {
+      display: none;
     }
     .carousel-dot {
       min-width: 44px;
@@ -3414,34 +3453,35 @@
       padding: 20px 12px;
       border-radius: 24px;
     }
-    .discounts-copy {
-      padding-inline-end: 60px;
-    }
     .discounts-heading {
-      margin-bottom: 16px;
-      gap: 16px;
+      grid-template-columns: minmax(0, 1fr) auto;
+      margin-bottom: 12px;
+      gap: 12px;
     }
     .discounts-copy h2, .bundles-intro h2, .bestsellers-intro h2 {
-      font-size: 24px;
-    }
-    .sale-emblem {
-      left: 12px;
-      width: 68px;
-      height: 68px;
-    }
-    .sale-emblem strong {
       font-size: 24px;
     }
     .sale-scroll-hint {
       font-size: 11px;
       max-width: 140px;
     }
-    .bundles-layout, .bestsellers-layout {
+    .bestsellers-layout {
       gap: 20px;
     }
     .bundles-benefit {
-      margin-top: 12px;
-      padding-top: 12px;
+      margin-top: 8px;
+      padding-top: 0;
+      border-top: 0;
+      gap: 8px;
+    }
+    .bundles-benefit strong {
+      font-size: 24px;
+    }
+    .bundles-benefit p {
+      font-size: 11px;
+    }
+    .bundles-benefit small {
+      display: none;
     }
     .bundles-description, .product-section-description {
       font-size: 12px;
@@ -3449,6 +3489,81 @@
     }
     .bundles-rail-heading {
       flex-wrap: wrap;
+      margin-bottom: 8px;
+    }
+    .discounts, .bundles {
+      padding-block: 16px 12px;
+    }
+    .discounts-kicker, .discounts-description, .bundles-kicker, .bundles-description {
+      display: none;
+    }
+    .discounts .sale-emblem {
+      position: static;
+      width: 52px;
+      height: 52px;
+      grid-column: 2;
+      grid-row: 1;
+    }
+    .discounts .sale-emblem strong {
+      font-size: 20px;
+    }
+    .discounts .sale-emblem strong > span {
+      font-size: 16px;
+    }
+    .discounts .sale-emblem small {
+      display: none;
+    }
+    .discounts-copy {
+      padding-inline-end: 0;
+    }
+    .sale-countdown {
+      grid-column: 1 / -1;
+    }
+    .countdown-label {
+      margin-bottom: 8px;
+      font-size: 11px;
+    }
+    .countdown-unit {
+      gap: 4px;
+    }
+    .countdown-unit strong {
+      width: 44px;
+      height: 40px;
+      font-size: 22px;
+      border-radius: 12px;
+    }
+    .countdown-separator {
+      padding-top: 6px;
+    }
+    .sale-deadline {
+      margin-top: 6px;
+    }
+    .sale-carousel-toolbar {
+      margin-bottom: 8px;
+    }
+    .sale-products, .bundle-products {
+      padding-bottom: 12px;
+    }
+    .discounts-footer {
+      margin-top: 8px;
+      padding-top: 8px;
+    }
+    .discounts-footer p {
+      display: none;
+    }
+    .bundles-layout {
+      gap: 12px;
+    }
+    .bundles-intro h2 {
+      font-size: 22px;
+      line-height: 1.4;
+    }
+    .bundles-footer {
+      margin-top: 8px;
+      padding-top: 8px;
+    }
+    :is(.sale-product, .bundle-product) .meta, .sale-product .cart-note {
+      display: none;
     }
     .sale-products, .bundle-products, .bestsellers-products {
       grid-auto-columns: min(280px, calc(66.6667% - 8px));
