@@ -11,6 +11,7 @@
     <script type="module" src="./src/carousel.js"></script>
     <script type="module" src="./src/discounts.js"></script>
     <script type="module" src="./src/discount-carousel.js"></script>
+    <script type="module" src="./src/bundle-scroll.js"></script>
   </head>
   <body>
     <!-- Edge refraction is progressive enhancement; the glass has a CSS fallback. -->
@@ -647,6 +648,208 @@
           <p>تازگی و کیفیت، با تضمین عصر جدید <span aria-hidden="true">✦</span></p>
           <span>محصولات، قیمت‌ها و زمان پایان نمونه هستند.</span>
         </div>
+      </section>
+
+      <!-- Sample product campaigns; only carousel navigation is functional. -->
+      <section class="product-promotions" aria-labelledby="product-promotions-title" data-carousel data-mobile-carousel>
+        <h2 id="product-promotions-title" class="sr-only">پیشنهادهای ویژه برای خانه‌ای تازه</h2>
+        <div class="product-promotion-viewport" id="product-promotion-slides">
+          <article class="product-banner product-banner--laundry is-active" role="group" aria-label="۱ از ۲: مایع لباس‌شویی">
+            <div class="product-banner-copy">
+              <p class="product-banner-kicker">✦ تازگی تا آخرین تار لباس</p>
+              <h3>تمیزی عمیق،<br />عطر ماندگار.</h3>
+              <p class="product-banner-description">مایع لباس‌شویی ۲ لیتری<br />برای لباس‌های رنگی و روشن</p>
+              <button class="product-banner-cta flex items-center gap-2" type="button">مشاهده محصول<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" /></svg></button>
+            </div>
+            <div class="product-banner-art">
+              <span class="product-banner-disc"></span>
+              <img src="./assets/images/promotions/laundry.svg" alt="" width="300" height="360" loading="lazy" />
+              <span class="product-banner-offer">۲۰٪<small>تخفیف ویژه</small></span>
+            </div>
+          </article>
+          <article class="product-banner product-banner--dishes" role="group" aria-label="۲ از ۲: مایع ظرف‌شویی">
+            <div class="product-banner-copy">
+              <p class="product-banner-kicker">✦ درخشش با رایحه لیمو</p>
+              <h3>یک قطره،<br />یک دنیا درخشش.</h3>
+              <p class="product-banner-description">مایع ظرف‌شویی لیمویی ۷۵۰ میلی‌لیتر<br />پاکیزگی برای ظرف‌های هر روز</p>
+              <button class="product-banner-cta flex items-center gap-2" type="button">مشاهده محصول<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" /></svg></button>
+            </div>
+            <div class="product-banner-art">
+              <span class="product-banner-disc"></span>
+              <img src="./assets/images/promotions/dishes.svg" alt="" width="300" height="360" loading="lazy" />
+              <span class="product-banner-offer">۱۵٪<small>تخفیف ویژه</small></span>
+            </div>
+          </article>
+        </div>
+        <div class="product-promotion-toolbar">
+          <div class="carousel-pagination flex items-center" role="group" aria-label="انتخاب پیشنهاد محصول">
+            <button class="carousel-dot is-active" type="button" data-slide="0" aria-label="نمایش مایع لباس‌شویی" aria-pressed="true" aria-controls="product-promotion-slides"><span></span></button>
+            <button class="carousel-dot" type="button" data-slide="1" aria-label="نمایش مایع ظرف‌شویی" aria-pressed="false" aria-controls="product-promotion-slides"><span></span></button>
+          </div>
+          <div class="carousel-navigation flex items-center gap-2">
+            <span class="carousel-count" aria-hidden="true"><b data-slide-count>۰۱</b><span> / ۰۲</span></span>
+            <button class="carousel-control" type="button" data-carousel-play aria-label="توقف پخش خودکار" aria-pressed="false" aria-controls="product-promotion-slides"><svg viewBox="0 0 24 24" aria-hidden="true"><path data-play-icon d="M9 6v12M15 6v12" /></svg></button>
+            <button class="carousel-control" type="button" data-carousel-prev aria-label="پیشنهاد محصول قبلی" aria-controls="product-promotion-slides"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m9 6 6 6-6 6" /></svg></button>
+            <button class="carousel-control" type="button" data-carousel-next aria-label="پیشنهاد محصول بعدی" aria-controls="product-promotion-slides"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m15 6-6 6 6 6" /></svg></button>
+          </div>
+        </div>
+        <p class="sr-only" role="status" aria-live="polite" aria-atomic="true" data-carousel-status></p>
+      </section>
+
+      <!-- Representative bundle offers. Shopping controls are visual-only; the row supports native scrolling and mouse dragging. -->
+      <section class="bundles" aria-labelledby="bundles-title">
+        <div class="bundles-layout">
+          <div class="bundles-intro">
+            <p class="bundles-kicker"><span aria-hidden="true">✦</span> کنار هم، به‌صرفه‌تر</p>
+            <h2 id="bundles-title">بسته‌های ترکیبی،<br /><span>خریدهای خوش‌قیمت.</span></h2>
+            <p class="bundles-description">محصولات جورواجورِ یک وعده را کنار هم بردارید؛ با یک بسته کامل و هزینه کمتر.</p>
+            <div class="bundles-benefit"><strong>۲۰٪</strong><p>تا بیست درصد تخفیف<small>روی بسته‌های منتخب</small></p></div>
+          </div>
+          <div class="bundles-rail">
+            <div class="bundles-rail-heading flex items-center justify-between gap-4"><p>۶ ترکیب خوش‌طعم</p><span class="bundles-scroll-hint" id="bundles-scroll-hint">برای دیدن همه، ورق بزنید <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" /></svg></span></div>
+            <div class="bundle-products" tabindex="0" role="region" aria-label="بسته‌های ترکیبی تخفیف‌دار" aria-describedby="bundles-scroll-hint">
+              <article class="card bundle-product" aria-labelledby="bundle-dairy-title">
+                <div class="visual-shell">
+                  <div class="photo-area">
+                    <span class="discount">۲۰٪ <span>تخفیف</span></span>
+                    <button class="favorite" type="button" aria-label="افزودن بسته لبنیات روزانه به علاقه‌مندی‌ها" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" /></svg></button>
+                    <div class="bundle-images"><img class="product" src="./assets/images/products/milk.svg" alt="شیر" width="320" height="220" loading="lazy" /><img class="product" src="./assets/images/products/yogurt.svg" alt="ماست" width="320" height="220" loading="lazy" /><img class="product" src="./assets/images/products/doogh.svg" alt="دوغ" width="320" height="220" loading="lazy" /></div>
+                    <span class="fresh">۳ محصول در یک بسته</span>
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="meta"><span>لبنیات</span><span>بسته پیشنهادی</span></div>
+                  <h3 id="bundle-dairy-title">لبنیات روزانه</h3>
+                  <p class="description">شیر ۱ لیتری + ماست ۹۰۰ گرمی + دوغ ۱ لیتری</p>
+                  <div class="purchase-panel">
+                    <div class="price-row">
+                      <span class="stock">قیمت بسته</span>
+                      <div class="prices"><del class="old-price"><span class="sr-only">قیمت قبل از تخفیف: </span>۲۵۰٬۰۰۰<span class="sr-only"> تومان</span></del><div class="price"><strong>۲۰۰٬۰۰۰</strong><span class="currency">تومان</span></div></div>
+                    </div>
+                    <button class="buy" type="button" aria-label="افزودن بسته لبنیات روزانه به سبد"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" /></svg>افزودن بسته به سبد</button>
+                    <p class="cart-note bundle-saving">۵۰٬۰۰۰ تومان صرفه‌جویی</p>
+                  </div>
+                </div>
+              </article>
+              <article class="card bundle-product" aria-labelledby="bundle-breakfast-title">
+                <div class="visual-shell">
+                  <div class="photo-area">
+                    <span class="discount">۱۵٪ <span>تخفیف</span></span>
+                    <button class="favorite" type="button" aria-label="افزودن بسته صبحانه دل‌چسب به علاقه‌مندی‌ها" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" /></svg></button>
+                    <div class="bundle-images"><img class="product" src="./assets/images/products/milk.svg" alt="شیر" width="320" height="220" loading="lazy" /><img class="product" src="./assets/images/products/bread.svg" alt="نان" width="320" height="220" loading="lazy" /><img class="product" src="./assets/images/products/eggs.svg" alt="تخم‌مرغ" width="320" height="220" loading="lazy" /></div>
+                    <span class="fresh">۳ محصول در یک بسته</span>
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="meta"><span>نان و صبحانه</span><span>بسته پیشنهادی</span></div>
+                  <h3 id="bundle-breakfast-title">صبحانه دل‌چسب</h3>
+                  <p class="description">شیر ۱ لیتری + نان ۴۰۰ گرمی + ۶ تخم‌مرغ</p>
+                  <div class="purchase-panel">
+                    <div class="price-row">
+                      <span class="stock">قیمت بسته</span>
+                      <div class="prices"><del class="old-price"><span class="sr-only">قیمت قبل از تخفیف: </span>۲۴۰٬۰۰۰<span class="sr-only"> تومان</span></del><div class="price"><strong>۲۰۴٬۰۰۰</strong><span class="currency">تومان</span></div></div>
+                    </div>
+                    <button class="buy" type="button" aria-label="افزودن بسته صبحانه دل‌چسب به سبد"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" /></svg>افزودن بسته به سبد</button>
+                    <p class="cart-note bundle-saving">۳۶٬۰۰۰ تومان صرفه‌جویی</p>
+                  </div>
+                </div>
+              </article>
+              <article class="card bundle-product" aria-labelledby="bundle-berry-title">
+                <div class="visual-shell">
+                  <div class="photo-area">
+                    <span class="discount">۲۰٪ <span>تخفیف</span></span>
+                    <button class="favorite" type="button" aria-label="افزودن بسته میان‌وعده توت‌فرنگی به علاقه‌مندی‌ها" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" /></svg></button>
+                    <div class="bundle-images"><img class="product" src="./assets/images/products/strawberries.svg" alt="توت‌فرنگی" width="320" height="220" loading="lazy" /><img class="product" src="./assets/images/products/yogurt.svg" alt="ماست" width="320" height="220" loading="lazy" /><img class="product" src="./assets/images/products/milk.svg" alt="شیر" width="320" height="220" loading="lazy" /></div>
+                    <span class="fresh">۳ محصول در یک بسته</span>
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="meta"><span>میوه و لبنیات</span><span>بسته پیشنهادی</span></div>
+                  <h3 id="bundle-berry-title">میان‌وعده توت‌فرنگی</h3>
+                  <p class="description">توت‌فرنگی ۵۰۰ گرمی + ماست ۹۰۰ گرمی + شیر</p>
+                  <div class="purchase-panel">
+                    <div class="price-row">
+                      <span class="stock">قیمت بسته</span>
+                      <div class="prices"><del class="old-price"><span class="sr-only">قیمت قبل از تخفیف: </span>۳۰۰٬۰۰۰<span class="sr-only"> تومان</span></del><div class="price"><strong>۲۴۰٬۰۰۰</strong><span class="currency">تومان</span></div></div>
+                    </div>
+                    <button class="buy" type="button" aria-label="افزودن بسته میان‌وعده توت‌فرنگی به سبد"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" /></svg>افزودن بسته به سبد</button>
+                    <p class="cart-note bundle-saving">۶۰٬۰۰۰ تومان صرفه‌جویی</p>
+                  </div>
+                </div>
+              </article>
+              <article class="card bundle-product" aria-labelledby="bundle-table-title">
+                <div class="visual-shell">
+                  <div class="photo-area">
+                    <span class="discount">۱۰٪ <span>تخفیف</span></span>
+                    <button class="favorite" type="button" aria-label="افزودن بسته همراه سفره به علاقه‌مندی‌ها" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" /></svg></button>
+                    <div class="bundle-images"><img class="product" src="./assets/images/products/bread.svg" alt="نان" width="320" height="220" loading="lazy" /><img class="product" src="./assets/images/products/yogurt.svg" alt="ماست" width="320" height="220" loading="lazy" /><img class="product" src="./assets/images/products/doogh.svg" alt="دوغ" width="320" height="220" loading="lazy" /></div>
+                    <span class="fresh">۳ محصول در یک بسته</span>
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="meta"><span>لبنیات و نان</span><span>بسته پیشنهادی</span></div>
+                  <h3 id="bundle-table-title">همراه سفره</h3>
+                  <p class="description">نان ۴۰۰ گرمی + ماست ۹۰۰ گرمی + دوغ</p>
+                  <div class="purchase-panel">
+                    <div class="price-row">
+                      <span class="stock">قیمت بسته</span>
+                      <div class="prices"><del class="old-price"><span class="sr-only">قیمت قبل از تخفیف: </span>۲۰۰٬۰۰۰<span class="sr-only"> تومان</span></del><div class="price"><strong>۱۸۰٬۰۰۰</strong><span class="currency">تومان</span></div></div>
+                    </div>
+                    <button class="buy" type="button" aria-label="افزودن بسته همراه سفره به سبد"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" /></svg>افزودن بسته به سبد</button>
+                    <p class="cart-note bundle-saving">۲۰٬۰۰۰ تومان صرفه‌جویی</p>
+                  </div>
+                </div>
+              </article>
+              <article class="card bundle-product" aria-labelledby="bundle-morning-title">
+                <div class="visual-shell">
+                  <div class="photo-area">
+                    <span class="discount">۱۵٪ <span>تخفیف</span></span>
+                    <button class="favorite" type="button" aria-label="افزودن بسته شروع پرانرژی به علاقه‌مندی‌ها" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" /></svg></button>
+                    <div class="bundle-images"><img class="product" src="./assets/images/products/eggs.svg" alt="تخم‌مرغ" width="320" height="220" loading="lazy" /><img class="product" src="./assets/images/products/milk.svg" alt="شیر" width="320" height="220" loading="lazy" /><img class="product" src="./assets/images/products/yogurt.svg" alt="ماست" width="320" height="220" loading="lazy" /></div>
+                    <span class="fresh">۳ محصول در یک بسته</span>
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="meta"><span>صبحانه و پروتئین</span><span>بسته پیشنهادی</span></div>
+                  <h3 id="bundle-morning-title">شروع پرانرژی</h3>
+                  <p class="description">۶ تخم‌مرغ + شیر ۱ لیتری + ماست ۹۰۰ گرمی</p>
+                  <div class="purchase-panel">
+                    <div class="price-row">
+                      <span class="stock">قیمت بسته</span>
+                      <div class="prices"><del class="old-price"><span class="sr-only">قیمت قبل از تخفیف: </span>۲۰۰٬۰۰۰<span class="sr-only"> تومان</span></del><div class="price"><strong>۱۷۰٬۰۰۰</strong><span class="currency">تومان</span></div></div>
+                    </div>
+                    <button class="buy" type="button" aria-label="افزودن بسته شروع پرانرژی به سبد"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" /></svg>افزودن بسته به سبد</button>
+                    <p class="cart-note bundle-saving">۳۰٬۰۰۰ تومان صرفه‌جویی</p>
+                  </div>
+                </div>
+              </article>
+              <article class="card bundle-product" aria-labelledby="bundle-snack-title">
+                <div class="visual-shell">
+                  <div class="photo-area">
+                    <span class="discount">۲۰٪ <span>تخفیف</span></span>
+                    <button class="favorite" type="button" aria-label="افزودن بسته عصرانه خانوادگی به علاقه‌مندی‌ها" aria-pressed="false"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" /></svg></button>
+                    <div class="bundle-images"><img class="product" src="./assets/images/products/bread.svg" alt="نان" width="320" height="220" loading="lazy" /><img class="product" src="./assets/images/products/strawberries.svg" alt="توت‌فرنگی" width="320" height="220" loading="lazy" /><img class="product" src="./assets/images/products/milk.svg" alt="شیر" width="320" height="220" loading="lazy" /></div>
+                    <span class="fresh">۳ محصول در یک بسته</span>
+                  </div>
+                </div>
+                <div class="info">
+                  <div class="meta"><span>میوه و نان</span><span>بسته پیشنهادی</span></div>
+                  <h3 id="bundle-snack-title">عصرانه خانوادگی</h3>
+                  <p class="description">نان ۴۰۰ گرمی + توت‌فرنگی ۵۰۰ گرمی + شیر</p>
+                  <div class="purchase-panel">
+                    <div class="price-row">
+                      <span class="stock">قیمت بسته</span>
+                      <div class="prices"><del class="old-price"><span class="sr-only">قیمت قبل از تخفیف: </span>۳۵۰٬۰۰۰<span class="sr-only"> تومان</span></del><div class="price"><strong>۲۸۰٬۰۰۰</strong><span class="currency">تومان</span></div></div>
+                    </div>
+                    <button class="buy" type="button" aria-label="افزودن بسته عصرانه خانوادگی به سبد"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" /></svg>افزودن بسته به سبد</button>
+                    <p class="cart-note bundle-saving">۷۰٬۰۰۰ تومان صرفه‌جویی</p>
+                  </div>
+                </div>
+              </article>
+            </div>
+          </div>
+        </div>
+        <p class="bundles-footer">یک انتخاب کامل برای هر روز شما · محصولات و قیمت‌های بسته‌ها نمونه هستند.</p>
       </section>
     </main>
   </body>

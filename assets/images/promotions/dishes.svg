@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 360">
+  <defs>
+    <linearGradient id="bottle" x1="0" x2="1" y2=".2"><stop stop-color="#6f8259"/><stop offset=".45" stop-color="#56604f"/><stop offset="1" stop-color="#353a42"/></linearGradient>
+  </defs>
+  <g transform="rotate(10 150 180)">
+    <path d="M116 69h68v47c0 13 23 26 23 45v143c0 20-17 31-31 31h-57c-18 0-29-13-29-31V161c0-20 26-32 26-45Z" fill="url(#bottle)"/>
+    <rect x="110" y="53" width="80" height="31" rx="7" fill="#edaa31"/>
+    <rect x="128" y="37" width="43" height="21" rx="6" fill="#24272b"/>
+    <path d="M94 179h109v99H94Z" fill="#fff5de"/>
+    <path d="M94 179h109v25H94Z" fill="#edaa31"/>
+    <ellipse cx="149" cy="241" rx="31" ry="24" transform="rotate(-25 149 241)" fill="#edaa31"/>
+    <path d="M146 219c-2-21 16-28 31-24-4 15-16 24-31 24Z" fill="#6f8259"/>
+    <path d="M104 155v151" fill="none" stroke="#6f8259" stroke-width="5" stroke-linecap="round"/>
+  </g>
+  <circle cx="219" cy="292" r="34" fill="#edaa31"/>
+  <circle cx="219" cy="292" r="28" fill="#fff5de"/>
+  <path d="M219 268v48m-24-24h48m-41-17 34 34m-34 0 34-34" stroke="#edaa31" stroke-width="4"/>
+  <path d="m235 123 5 15 15 5-15 5-5 15-5-15-15-5 15-5ZM69 219l4 11 11 4-11 4-4 11-4-11-11-4 11-4Z" fill="#fff"/>
+</svg>

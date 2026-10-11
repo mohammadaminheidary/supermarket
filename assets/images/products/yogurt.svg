@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220">
+  <defs>
+    <linearGradient id="tub" x2="1" y2=".2"><stop stop-color="#fff"/><stop offset=".6" stop-color="#f1f2f5"/><stop offset="1" stop-color="#d9dde2"/></linearGradient>
+    <linearGradient id="label" x2="1" y2=".2"><stop stop-color="#2e77c7"/><stop offset="1" stop-color="#174b94"/></linearGradient>
+  </defs>
+  <path d="M83 65h154l-17 130q-60 15-120 0Z" fill="url(#tub)"/>
+  <path d="m87 92 10 78q63 13 126 0l10-78Z" fill="url(#label)"/>
+  <ellipse cx="160" cy="66" rx="81" ry="17" fill="#174b94"/>
+  <ellipse cx="160" cy="61" rx="81" ry="17" fill="#3984d1"/>
+  <ellipse cx="160" cy="58" rx="66" ry="10" fill="#fff" opacity=".85"/>
+  <path d="M110 104h100M116 158h88" stroke="#fff" opacity=".5"/>
+  <text x="160" y="138" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="20" font-weight="bold">YOGURT</text>
+</svg>

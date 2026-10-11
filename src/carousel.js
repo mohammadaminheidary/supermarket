@@ -1,13 +1,13 @@
 // Carousel behavior only; campaign CTAs are presentation previews.
-const carousel = document.querySelector('[data-carousel]');
-
-if (carousel) {
-  const slides = [...carousel.querySelectorAll('.promotion-slide')];
+document.querySelectorAll('[data-carousel]').forEach((carousel) => {
+  const slides = [...carousel.querySelectorAll('.promotion-slide, .product-banner')];
   const dots = [...carousel.querySelectorAll('[data-slide]')];
   const playButton = carousel.querySelector('[data-carousel-play]');
   const playIcon = carousel.querySelector('[data-play-icon]');
   const status = carousel.querySelector('[data-carousel-status]');
-  const viewport = carousel.querySelector('.promotion-viewport');
+  const viewport = carousel.querySelector('.promotion-viewport, .product-promotion-viewport');
+  const mobile = carousel.hasAttribute('data-mobile-carousel') ? window.matchMedia('(max-width: 680px)') : null;
+  const enabled = () => !mobile || mobile.matches;
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const number = new Intl.NumberFormat('fa-IR', { minimumIntegerDigits: 2 });
   let current = 0;
@@ -20,7 +20,7 @@ if (carousel) {
 
   const schedule = () => {
     window.clearTimeout(timer);
-    if (!paused && !hovered && !focused && visible && !document.hidden) {
+    if (enabled() && !paused && !hovered && !focused && visible && !document.hidden) {
       timer = window.setTimeout(() => show(current + 1), 6500);
     }
   };
@@ -30,8 +30,8 @@ if (carousel) {
     slides.forEach((slide, i) => {
       const active = i === current;
       slide.classList.toggle('is-active', active);
-      slide.inert = !active;
-      slide.setAttribute('aria-hidden', String(!active));
+      slide.inert = enabled() && !active;
+      slide.setAttribute('aria-hidden', String(enabled() && !active));
       dots[i].classList.toggle('is-active', active);
       dots[i].setAttribute('aria-pressed', String(active));
     });
@@ -52,11 +52,12 @@ if (carousel) {
   dots.forEach((dot, i) => dot.addEventListener('click', () => show(i, true)));
   playButton.addEventListener('click', () => { paused = !paused; updatePlay(); });
   carousel.addEventListener('keydown', (event) => {
+    if (!enabled()) return;
     // RTL: the next slide is to the left.
     if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
     event.preventDefault();
     // Keep keyboard focus on the stable controls when a CTA's slide becomes inert.
-    if (event.target.closest('.promotion-slide')) playButton.focus();
+    if (event.target.closest('.promotion-slide, .product-banner')) playButton.focus();
     const index = event.key === 'Home' ? 0 : event.key === 'End' ? slides.length - 1 : current + (event.key === 'ArrowLeft' ? 1 : -1);
     show(index, true);
   });
@@ -65,7 +66,7 @@ if (carousel) {
   carousel.addEventListener('focusin', () => { focused = true; schedule(); });
   carousel.addEventListener('focusout', (event) => { focused = carousel.contains(event.relatedTarget); schedule(); });
   viewport.addEventListener('pointerdown', (event) => {
-    if (event.pointerType === 'touch') touchStart = { x: event.clientX, y: event.clientY };
+    if (enabled() && event.pointerType === 'touch') touchStart = { x: event.clientX, y: event.clientY };
   });
   viewport.addEventListener('pointerup', (event) => {
     if (!touchStart) return;
@@ -77,8 +78,19 @@ if (carousel) {
   viewport.addEventListener('pointercancel', () => { touchStart = undefined; });
   document.addEventListener('visibilitychange', schedule);
   motion.addEventListener('change', () => { paused = motion.matches; updatePlay(); });
+  mobile?.addEventListener('change', () => {
+    touchStart = undefined;
+    // A resize must not leave keyboard focus inside a newly hidden banner/control.
+    if (carousel.contains(document.activeElement)) document.activeElement.blur();
+    focused = false;
+    show(current);
+    if (mobile.matches) carousel.setAttribute('aria-roledescription', 'اسلایدشو');
+    else carousel.removeAttribute('aria-roledescription');
+  });
   if ('IntersectionObserver' in window) {
     new IntersectionObserver(([entry]) => { visible = entry.isIntersecting; schedule(); }, { threshold: .15 }).observe(carousel);
   }
+  show(0);
+  if (mobile?.matches) carousel.setAttribute('aria-roledescription', 'اسلایدشو');
   updatePlay();
-}
+});
