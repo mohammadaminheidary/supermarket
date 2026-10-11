@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220">
+  <defs>
+    <linearGradient id="milk" x2="1" y2=".2">
+      <stop stop-color="#fff" />
+      <stop offset=".6" stop-color="#f1f2f5" />
+      <stop offset="1" stop-color="#d9dde2" />
+    </linearGradient>
+    <g id="bottle">
+      <path d="M-32-118H32V-65Q52-48 55-21V135Q0 147-55 135V-21Q-52-48-32-65Z" fill="url(#milk)" />
+      <rect x="-35" y="-129" width="70" height="25" rx="6" fill="#e52536" />
+      <path d="M-55 10H55V98H-55Z" fill="#e52536" />
+      <path d="M-43 19H43M-43 89H43" stroke="#fff" opacity=".5" />
+      <text x="0" y="62" text-anchor="middle" fill="#fff" font-family="sans-serif" font-size="25" font-weight="bold">MILK</text>
+    </g>
+  </defs>
+  <use href="#bottle" transform="translate(160 108) scale(.67)" />
+</svg>

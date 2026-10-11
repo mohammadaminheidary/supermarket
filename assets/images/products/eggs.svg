@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 220">
+  <defs>
+    <radialGradient id="egg" cx=".3" cy=".3">
+      <stop stop-color="#fff8ee" />
+      <stop offset="1" stop-color="#dbc0a1" />
+    </radialGradient>
+    <g id="eggshape">
+      <path d="M0-65C-26-64-51-7-49 23-45 83 47 84 49 23 51-7 26-64 0-65Z" fill="url(#egg)" />
+    </g>
+  </defs>
+  <use href="#eggshape" transform="translate(128 113) rotate(-15) scale(.85)" />
+  <use href="#eggshape" transform="translate(188 130) rotate(20) scale(.8)" />
+</svg>
