@@ -1,9 +1,62 @@
 <!doctype html>
-<html>
+<html lang="fa" dir="rtl">
   <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+    <meta name="theme-color" content="#f2f3f5" />
+    <meta name="description" content="هایپرمارکت عصر جدید؛ همراه خریدهای تازه و روزانه شما." />
+    <title>هایپرمارکت عصر جدید</title>
     <link href="./src/output.css" rel="stylesheet" />
+    <script type="module" src="./src/header.js"></script>
   </head>
-  <body></body>
+  <body>
+    <!-- Edge refraction is progressive enhancement; the glass has a CSS fallback. -->
+    <svg class="filter-definitions" aria-hidden="true" width="0" height="0">
+      <defs>
+        <filter id="glass-refraction" x="-10%" y="-30%" width="120%" height="160%" color-interpolation-filters="sRGB">
+          <feTurbulence type="fractalNoise" baseFrequency="0.012 0.04" numOctaves="2" seed="8" result="water" />
+          <feGaussianBlur in="water" stdDeviation="2" result="smooth-water" />
+          <feDisplacementMap in="SourceGraphic" in2="smooth-water" scale="12" xChannelSelector="R" yChannelSelector="G" />
+        </filter>
+      </defs>
+    </svg>
+
+    <header class="site-header">
+      <div class="header-container">
+        <!-- Representative contact details for the UI preview. -->
+        <div class="topbar flex items-center justify-between">
+          <address class="topbar-address flex items-center gap-2">
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg>
+            <span>تهران، خیابان ولیعصر، پلاک ۱۲۸</span>
+          </address>
+          <div class="topbar-support flex items-center gap-2">
+            <bdi class="phone-number" dir="ltr">۰۲۱ − ۱۲۳۴ ۵۶۷۸</bdi>
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2C9 21 3 15 3 5a2 2 0 0 1 2-2Z" /></svg>
+          </div>
+        </div>
+
+        <nav class="glass navbar" aria-label="ناوبری اصلی">
+          <div class="nav-brand flex items-center gap-3" aria-label="هایپرمارکت عصر جدید">
+            <span class="brand-icon grid place-items-center">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 9 2 11h12l2-11H4ZM8 9l4-6 4 6M9 13v3m6-3v3" /></svg>
+            </span>
+            <span class="brand-wordmark flex flex-col">
+              <span class="brand-prefix">هایپرمارکت</span>
+              <strong>عصر جدید</strong>
+            </span>
+          </div>
+
+          <div class="nav-search flex items-center">
+            <label class="sr-only" for="store-search">جست‌وجو در محصولات فروشگاه</label>
+            <svg class="search-icon" viewBox="0 0 24 24" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5" /><path d="m16 16 4.5 4.5" /></svg>
+            <input id="store-search" type="search" placeholder="امروز به چی نیاز دارید؟" autocomplete="off" />
+            <button class="search-action grid place-items-center" type="button" aria-label="جست‌وجو">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" /></svg>
+            </button>
+          </div>
+
+        </nav>
+      </div>
+    </header>
+  </body>
 </html>
