@@ -29,7 +29,7 @@ for (const card of section?.querySelectorAll('[data-product]') ?? []) {
     increment.disabled = count === 99;
     note.classList.toggle('active', count > 0);
     note.textContent = count > 0
-      ? `${number.format(count)} عدد ${name} در سبد · جمع: ${number.format(count * price)} تومان`
+      ? `جمع: ${number.format(count * price)} تومان`
       : defaultNote;
   }
 
