@@ -56,7 +56,8 @@ if (carousel) {
     const next = Math.max(0, Math.min(limit, current + direction * speed * elapsed));
     // Retain subpixel progress even when a browser rounds scrollLeft to whole pixels.
     animatedPosition = next;
-    track.scrollLeft = -next;
+    // Automatic frames must bypass smooth CSS scrolling; each frame is already eased.
+    track.scrollTo({ left: -next, behavior: 'instant' });
     lastWritten = track.scrollLeft;
     frame = requestAnimationFrame(animate);
   }

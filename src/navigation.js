@@ -8,6 +8,7 @@ if (navbar) {
   initAdaptiveContrast(navbar);
   const items = [...navbar.querySelectorAll('.nav-item')];
   let response;
+  const iconResponses = new Map();
 
   items.forEach((item, index) => {
     item.addEventListener('click', () => {
@@ -23,6 +24,20 @@ if (navbar) {
       response?.cancel();
       if (motionQuery.matches) return;
 
+      const icon = item.querySelector('svg');
+      iconResponses.get(icon)?.cancel();
+      const pose = getComputedStyle(icon).transform;
+      const base = pose === 'none' ? '' : pose;
+      const shake = icon.animate([
+        { transform: `${base} rotate(0deg)` },
+        { transform: `${base} translateX(-1.5px) rotate(-5deg)`, offset: .22 },
+        { transform: `${base} translateX(1.5px) rotate(4deg)`, offset: .46 },
+        { transform: `${base} translateX(-.5px) rotate(-2deg)`, offset: .7 },
+        { transform: `${base} rotate(0deg)` },
+      ], { duration: 420, easing: 'ease-in-out' });
+      iconResponses.set(icon, shake);
+      shake.addEventListener('finish', () => { if (iconResponses.get(icon) === shake) iconResponses.delete(icon); });
+
       // A restrained elastic response keeps the silhouette and hit areas stable.
       response = navbar.animate([
         { transform: currentPose === 'none' ? 'scale(1)' : currentPose, easing: 'cubic-bezier(.4, 0, .2, 1)' },
@@ -33,5 +48,9 @@ if (navbar) {
     });
   });
 
-  motionQuery.addEventListener('change', () => response?.cancel());
+  motionQuery.addEventListener('change', () => {
+    response?.cancel();
+    iconResponses.forEach((animation) => animation.cancel());
+    iconResponses.clear();
+  });
 }

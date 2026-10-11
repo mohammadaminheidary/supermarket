@@ -1,6 +1,18 @@
 // Mouse dragging supplements native touch, trackpad and keyboard scrolling.
-for (const track of document.querySelectorAll('.bundle-products')) {
+for (const track of document.querySelectorAll('.sale-products, .bundle-products, .bestsellers-products, .catalog-grid, .quick-categories')) {
   const dragThreshold = 6;
+  const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
+  // The discounts rail owns its keyboard controls and automatic movement.
+  if (!track.matches('.sale-products')) {
+    track.addEventListener('keydown', (event) => {
+      if (event.target !== track || !['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
+      event.preventDefault();
+      const limit = Math.max(0, track.scrollWidth - track.clientWidth);
+      const stride = track.querySelector('.card, .quick-category')?.getBoundingClientRect().width + (parseFloat(getComputedStyle(track).columnGap) || 12);
+      const next = event.key === 'Home' ? 0 : event.key === 'End' ? -limit : track.scrollLeft + (event.key === 'ArrowLeft' ? -stride : stride);
+      track.scrollTo({ left: Math.max(-limit, Math.min(0, next)), behavior: motion.matches ? 'instant' : 'smooth' });
+    });
+  }
   let gesture = null;
   let suppressClick = false;
 
