@@ -14,6 +14,7 @@
     <script type="module" src="./src/discount-carousel.js"></script>
     <script type="module" src="./src/bundle-scroll.js"></script>
     <script type="module" src="./src/bestsellers.js"></script>
+    <script type="module" src="./src/footer.js"></script>
   </head>
   <body>
     <!-- Edge refraction is progressive enhancement; the glass has a CSS fallback. -->
@@ -27,7 +28,7 @@
       </defs>
     </svg>
 
-    <header class="site-header">
+    <header class="site-header" id="home">
       <div class="header-container">
         <!-- Representative contact details for the UI preview. -->
         <div class="topbar flex items-center justify-between">
@@ -68,32 +69,32 @@
           <!-- Visual preview only; the initial category stays selected. -->
           <ul class="quick-categories-list flex flex-nowrap items-center gap-4">
             <li class="shrink-0">
-              <button class="quick-category flex items-center gap-3 whitespace-nowrap is-active" type="button" aria-pressed="true">
-                <img class="category-photo" src="./assets/images/photos/bread.webp" alt="" width="800" height="800" decoding="async" />
+              <button class="quick-category flex items-center whitespace-nowrap is-active" type="button" aria-pressed="true">
+                <span class="category-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M4 5h4l4 17h14l4-12H9M13 26h.01M25 26h.01" /><path d="M15 14h8l-2 4h-5" /></svg></span>
                 <span>سوپرمارکت</span>
               </button>
             </li>
             <li class="shrink-0">
-              <button class="quick-category flex items-center gap-3 whitespace-nowrap" type="button" aria-pressed="false">
-                <img class="category-photo" src="./assets/images/photos/doogh.webp" alt="" width="800" height="800" decoding="async" />
+              <button class="quick-category flex items-center whitespace-nowrap" type="button" aria-pressed="false">
+                <span class="category-icon" aria-hidden="true"><svg class="category-icon--drink" viewBox="0 0 32 32"><path d="m19 11 2-7h6M7 12h20" /><path d="M10 16l2 13h12l2-13Z" /><path class="icon-detail" d="m17 19 1 6" /></svg></span>
                 <span>نوشیدنی</span>
               </button>
             </li>
             <li class="shrink-0">
-              <button class="quick-category flex items-center gap-3 whitespace-nowrap" type="button" aria-pressed="false">
-                <img class="category-photo" src="./assets/images/photos/snacks.webp" alt="" width="800" height="800" decoding="async" />
+              <button class="quick-category flex items-center whitespace-nowrap" type="button" aria-pressed="false">
+                <span class="category-icon category-icon--warm" aria-hidden="true"><svg class="category-icon--snacks" viewBox="0 0 32 32"><path d="m17 5 7 1-2 7 5 13c1 3-2 4-5 3l-9-4-3 3c-3 2-7 0-6-4l5-11 7-3Z" /><path class="icon-detail" d="m15 7 10 1M13 15l-5 8m3-4 3 2M21 16l2 8" /></svg></span>
                 <span>تنقلات</span>
               </button>
             </li>
             <li class="shrink-0">
-              <button class="quick-category flex items-center gap-3 whitespace-nowrap" type="button" aria-pressed="false">
-                <img class="category-photo" src="./assets/images/photos/nuts.webp" alt="" width="800" height="800" decoding="async" />
+              <button class="quick-category flex items-center whitespace-nowrap" type="button" aria-pressed="false">
+                <span class="category-icon category-icon--warm" aria-hidden="true"><svg class="category-icon--nuts" viewBox="0 0 32 32"><path d="M15 14C8 14 8 6 13 4c4 3 5 7 2 10ZM18 14c-3-6 0-9 5-10 2 5 0 9-5 10Z" /><ellipse cx="10" cy="22" rx="7" ry="8" transform="rotate(-32 10 22)" /><ellipse cx="23" cy="22" rx="7" ry="8" transform="rotate(32 23 22)" /><path class="icon-detail" d="m6 18 6 8m14-8-5 8M14 5l1 6m7-5-3 5" /></svg></span>
                 <span>خشکبار</span>
               </button>
             </li>
             <li class="shrink-0">
-              <button class="quick-category flex items-center gap-3 whitespace-nowrap" type="button" aria-pressed="false">
-                <img class="category-photo" src="./assets/images/photos/laundry.webp" alt="" width="800" height="800" decoding="async" />
+              <button class="quick-category flex items-center whitespace-nowrap" type="button" aria-pressed="false">
+                <span class="category-icon" aria-hidden="true"><svg viewBox="0 0 32 32"><path d="M12 4h11v3M17 4v5M14 9h6v5M13 14h8a3 3 0 0 1 3 3v12H10V17a3 3 0 0 1 3-3Z" /><path d="M14 18h6" /></svg></span>
                 <span>بهداشت</span>
               </button>
             </li>
@@ -231,7 +232,7 @@
       </section>
       <div class="promotion-footer flex items-center justify-between gap-4"><p>برای روزمره‌های خوش‌طعم شما <span aria-hidden="true">✦</span></p><span>هایپرمارکت عصر جدید</span></div>
 
-      <section class="discounts" aria-labelledby="discounts-title">
+      <section class="discounts" id="offers" aria-labelledby="discounts-title">
         <div class="discounts-heading">
           <div class="discounts-copy">
             <p class="discounts-kicker"><span aria-hidden="true">✦</span> پیشنهادهای محدود، انتخاب‌های خوش‌قیمت</p>
@@ -736,7 +737,7 @@
       </section>
 
       <!-- Representative bundle offers. Shopping controls are visual-only; the row supports native scrolling and mouse dragging. -->
-      <section class="bundles" aria-labelledby="bundles-title">
+      <section class="bundles" id="bundles" aria-labelledby="bundles-title">
         <div class="bundles-layout">
           <div class="bundles-intro">
             <p class="bundles-kicker"><span aria-hidden="true">✦</span> کنار هم، به‌صرفه‌تر</p>
@@ -1086,7 +1087,7 @@
         <ul class="catalog-categories flex flex-wrap gap-x-6 gap-y-2" aria-label="دسته‌بندی‌های موجود در مجموعه">
           <li>میوه و سبزیجات</li><li>لبنیات</li><li>نان و صبحانه</li><li>پروتئین</li><li>شوینده و بهداشتی</li>
         </ul>
-        <div class="catalog-grid">
+        <div class="catalog-grid" tabindex="0" role="region" aria-label="همه محصولات؛ برای مشاهده بیشتر به طرفین پیمایش کنید">
             <article class="card catalog-product" aria-labelledby="catalog-strawberries">
               <div class="visual-shell">
                 <div class="photo-area">
@@ -1467,5 +1468,179 @@
         <p class="catalog-preview-note">نمایش نمونه فروشگاه · محصولات، قیمت‌ها و ترتیب پرفروش‌ها برای پیش‌نمایش هستند.</p>
       </section>
     </main>
+
+    <footer class="site-footer" aria-label="اطلاعات فروشگاه">
+      <div class="footer-inner">
+        <section class="footer-newsletter grid items-center gap-6" aria-labelledby="newsletter-title">
+          <div>
+            <p class="footer-eyebrow">خبرهای تازه، برای شما</p>
+            <h2 id="newsletter-title">از پیشنهادهای خوش‌قیمت جا نمانید.</h2>
+            <p>تازه‌های فروشگاه و پیشنهادهای ویژه، در صندوق ایمیل شما.</p>
+          </div>
+          <form class="newsletter-form" data-newsletter>
+            <label for="newsletter-email">ایمیل شما</label>
+            <div class="newsletter-field flex items-center gap-2">
+              <input id="newsletter-email" name="email" type="email" dir="ltr" autocomplete="email" placeholder="you@example.com" maxlength="254" required aria-describedby="newsletter-note newsletter-status" />
+              <button class="footer-submit flex items-center justify-center gap-2" type="submit">عضویت <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" /></svg></button>
+            </div>
+            <label class="newsletter-consent flex items-start gap-2"><input type="checkbox" name="consent" required /> <span>با ذخیره ایمیلم برای خبرنامه موافقم. <a href="#footer-privacy">حریم خصوصی</a></span></label>
+            <p id="newsletter-note" class="footer-note">فرم نمایشی است؛ ایمیل فقط در این مرورگر ذخیره می‌شود و پیامی ارسال نمی‌شود.</p>
+            <p id="newsletter-status" class="newsletter-status" role="status" aria-live="polite" aria-atomic="true"></p>
+            <button class="footer-text-button" type="button" data-newsletter-remove hidden>حذف ایمیل ذخیره‌شده</button>
+            <noscript>
+              <p class="footer-note">برای استفاده از فرم نمایشی، جاوااسکریپت را فعال کنید.</p>
+            </noscript>
+          </form>
+        </section>
+
+        <div class="footer-columns grid gap-8">
+          <section class="footer-about" aria-labelledby="footer-brand-title">
+            <a class="footer-brand flex items-center gap-3" href="#home" aria-label="هایپرمارکت عصر جدید، بازگشت به بالای صفحه">
+              <span class="brand-icon grid place-items-center"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 9 2 11h12l2-11H4ZM8 9l4-6 4 6M9 13v3m6-3v3" /></svg></span>
+              <span class="brand-wordmark flex flex-col"><span class="brand-prefix">هایپرمارکت</span><strong id="footer-brand-title">عصر جدید</strong></span>
+            </a>
+            <p>از تازگی صبحانه تا خریدهای خانه؛ کنار شماییم تا خرید روزانه، ساده‌تر و دل‌چسب‌تر باشد.</p>
+            <address class="footer-contact">
+              <a class="flex items-start gap-2" href="https://www.google.com/maps/search/?api=1&amp;query=تهران+خیابان+ولیعصر+پلاک+۱۲۸" target="_blank" rel="noopener noreferrer"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 10c0 6-8 11-8 11S4 16 4 10a8 8 0 1 1 16 0Z" /><circle cx="12" cy="10" r="2.5" /></svg><span>تهران، خیابان ولیعصر، پلاک ۱۲۸ <span class="sr-only">(نقشه در پنجره جدید)</span></span></a>
+              <a class="flex items-center gap-2" href="tel:+982112345678"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3h4l2 5-3 2a15 15 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2C9 21 3 15 3 5a2 2 0 0 1 2-2Z" /></svg><bdi dir="ltr">۰۲۱ − ۱۲۳۴ ۵۶۷۸</bdi></a>
+              <span>پاسخ‌گویی: هر روز، ۹ تا ۲۱</span>
+            </address>
+            <p class="footer-social-label">با دوستانتان به اشتراک بگذارید</p>
+            <div class="footer-social flex flex-wrap gap-2" aria-label="اشتراک‌گذاری در شبکه‌های اجتماعی">
+              <a href="https://t.me/share/url?url=https%3A%2F%2Fexample.com&amp;text=هایپرمارکت%20عصر%20جدید" data-share="telegram" target="_blank" rel="noopener noreferrer" aria-label="اشتراک‌گذاری در تلگرام (پنجره جدید)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m21 3-4 18-6-5-4 3 1-7L21 3ZM8 12l13-9L3 10l5 2Zm3 4 6-9" /></svg></a>
+              <a href="https://wa.me/?text=هایپرمارکت%20عصر%20جدید" data-share="whatsapp" target="_blank" rel="noopener noreferrer" aria-label="اشتراک‌گذاری در واتس‌اپ (پنجره جدید)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20 11.5a8.5 8.5 0 0 1-12.5 7.6L3 21l1.4-4.7A8.5 8.5 0 1 1 20 11.5Z" /><path d="m8 7 2 3-1 1c1 2 2 3 4 4l1-1 3 1c0 3-4 3-7 0S5 8 8 7Z" /></svg></a>
+              <a href="https://twitter.com/intent/tweet?text=هایپرمارکت%20عصر%20جدید" data-share="x" target="_blank" rel="noopener noreferrer" aria-label="اشتراک‌گذاری در ایکس (پنجره جدید)"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m4 3 12 18h4L8 3H4Zm0 18 7-8m2-2 7-8" /></svg></a>
+            </div>
+          </section>
+          <nav aria-labelledby="footer-quick-title">
+            <h2 id="footer-quick-title" data-footer-toggle="footer-quick-links">دسترسی سریع</h2>
+            <div class="footer-group-content" id="footer-quick-links">
+              <ul class="footer-links">
+                <li><a href="#home">صفحه اصلی</a></li>
+                <li><a href="#products">همه محصولات</a></li>
+                <li><a href="#offers">تخفیف‌های طلایی</a></li>
+                <li><a href="#bundles">بسته‌های ترکیبی</a></li>
+                <li><a href="#bestsellers">پرفروش‌ها</a></li>
+                <li><a href="#footer-brand-title">درباره عصر جدید</a></li>
+              </ul>
+            </div>
+          </nav>
+          <nav aria-labelledby="footer-categories-title">
+            <h2 id="footer-categories-title" data-footer-toggle="footer-categories-links">دسته‌بندی محصولات</h2>
+            <div class="footer-group-content" id="footer-categories-links">
+              <ul class="footer-links">
+                <li><a href="#catalog-strawberries">میوه‌های تازه</a></li>
+                <li><a href="#catalog-milk">لبنیات و نوشیدنی</a></li>
+                <li><a href="#catalog-bread">نان و صبحانه</a></li>
+                <li><a href="#catalog-eggs">تخم‌مرغ</a></li>
+                <li><a href="#catalog-laundry">شوینده و بهداشتی</a></li>
+              </ul>
+            </div>
+          </nav>
+          <nav aria-labelledby="footer-support-title">
+            <h2 id="footer-support-title" data-footer-toggle="footer-support-links">همراه مشتریان</h2>
+            <div class="footer-group-content" id="footer-support-links">
+              <ul class="footer-links">
+                <li><a href="#footer-shopping">راهنمای خرید</a></li>
+                <li><a href="#footer-delivery">ارسال و تحویل</a></li>
+                <li><a href="#footer-returns">بازگشت کالا</a></li>
+                <li><a href="#footer-faq">پرسش‌های متداول</a></li>
+                <li><a href="#footer-privacy">حریم خصوصی</a></li>
+                <li><a href="tel:+982112345678">تماس با پشتیبانی</a></li>
+              </ul>
+            </div>
+          </nav>
+          <section class="footer-blog" aria-labelledby="footer-blog-title">
+            <p class="footer-eyebrow">خواندنی‌های روزمره</p>
+            <h2 id="footer-blog-title" data-footer-toggle="footer-blog-links">مجله عصر جدید</h2>
+            <div class="footer-group-content" id="footer-blog-links">
+              <ul class="footer-articles">
+                <li><a href="#blog-fresh"><span>تازه نگه داشتن میوه‌ها، با چند قدم ساده</span><small>خانه و آشپزخانه · ۴ دقیقه مطالعه</small></a></li>
+                <li><a href="#blog-breakfast"><span>یک صبحانه ساده برای شروعی خوش‌طعم</span><small>ایده‌های صبحانه · ۳ دقیقه مطالعه</small></a></li>
+                <li><a href="#blog-shopping"><span>چطور لیست خرید هفتگی بنویسیم؟</span><small>خرید هوشمندانه · ۳ دقیقه مطالعه</small></a></li>
+              </ul>
+              <a class="footer-all-posts inline-flex items-center gap-2" href="#footer-journal">همه نوشته‌های مجله <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M19 12H5m6-6-6 6 6 6" /></svg></a>
+            </div>
+          </section>
+        </div>
+
+        <div class="footer-assurance flex flex-wrap items-center justify-between gap-6">
+          <ul class="footer-trust flex flex-wrap gap-6" aria-label="ارزش‌های فروشگاه، نمونه نمایشی">
+            <li class="flex items-center gap-2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 4 6v6c0 5 8 9 8 9s8-4 8-9V6l-8-3Z" /><path d="m8 12 3 3 5-6" /></svg><span>تضمین کیفیت کالا<small>انتخاب با خیال راحت</small></span></li>
+            <li class="flex items-center gap-2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h12v12H3V5Zm12 4h4l3 4v4h-7" /><circle cx="7" cy="18" r="2" /><circle cx="18" cy="18" r="2" /></svg><span>تحویل با دقت<small>همراه تازگی خرید شما</small></span></li>
+            <li class="flex items-center gap-2"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 14v-3a8 8 0 0 1 16 0v3M4 11H2v7h4v-7H4Zm16 0h2v7h-4v-7h2Zm0 7c0 3-5 3-7 3" /></svg><span>پشتیبانی پاسخ‌گو<small>هر روز کنار شما</small></span></li>
+          </ul>
+          <div class="footer-payment">
+            <p>روش‌های پرداخت</p>
+            <div class="flex flex-wrap items-center gap-2"><span class="payment-mark"><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="3" /><path d="M3 10h18M7 15h3" /></svg>شتاب</span><span class="payment-mark">پرداخت آنلاین</span><span class="payment-mark">پرداخت در محل</span></div></div>
+        </div>
+
+        <div class="footer-resources">
+          <details id="footer-journal">
+            <summary>همه نوشته‌های مجله عصر جدید</summary>
+            <div class="footer-resource-body">
+              <details id="blog-fresh">
+                <summary>تازه نگه داشتن میوه‌ها، با چند قدم ساده</summary>
+                <article>
+                  <h3>تازگی از یک انتخاب خوب شروع می‌شود</h3>
+                  <p>پیش از خرید، میوه‌ها را از نظر ظاهر و بافت بررسی کنید و مقدار خرید را با مصرف چند روز آینده هماهنگ کنید. میوه‌های رسیده‌تر را برای مصرف زودتر کنار بگذارید.</p>
+                  <p>میوه‌های آسیب‌دیده را از بقیه جدا کنید. برای نگهداری، به نیاز هر میوه توجه کنید: موز نارس را در دمای اتاق نگه دارید و توت‌فرنگی را در ظرف خشک و در یخچال قرار دهید. شستن میوه‌ها را به نزدیک زمان مصرف موکول کنید.</p>
+                  <p>هر چند روز یک بار محتویات یخچال را بررسی کنید. قرار دادن میوه‌های قدیمی‌تر جلوی قفسه کمک می‌کند چیزی از چشم پنهان نماند.</p>
+                </article>
+              </details>
+              <details id="blog-breakfast">
+                <summary>یک صبحانه ساده برای شروعی خوش‌طعم</summary>
+                <article>
+                  <h3>یک سفره کوچک، چند انتخاب دوست‌داشتنی</h3>
+                  <p>برای یک صبحانه ساده، نان تازه را کنار پنیر یا تخم‌مرغ و چند برش میوه فصل بگذارید. ترکیب را با سلیقه و نیاز اعضای خانواده هماهنگ کنید.</p>
+                  <p>اگر صبح‌ها وقت کمی دارید، ظرف‌ها و مواد خشک را از شب قبل آماده کنید. مواد یخچالی را هنگام سرو بیرون بیاورید و تنها به اندازه نیاز روی میز قرار دهید.</p>
+                  <p>برای تنوع، یک روز نان و پنیر، روز دیگر تخم‌مرغ و روز بعد ماست و میوه را امتحان کنید. برنامه‌ای ساده و قابل تغییر، آماده کردن صبحانه را آسان‌تر می‌کند.</p>
+                </article>
+              </details>
+              <details id="blog-shopping">
+                <summary>چطور لیست خرید هفتگی بنویسیم؟</summary>
+                <article>
+                  <h3>قبل از خرید، یک نگاه به خانه</h3>
+                  <p>یخچال و کابینت‌ها را بررسی کنید و موجودی را یادداشت کنید. سپس برای چند وعده پیش رو برنامه‌ای انعطاف‌پذیر بنویسید و فقط مواد مورد نیاز را به لیست اضافه کنید.</p>
+                  <p>لیست را به میوه، لبنیات، نان، اقلام خانه و سایر نیازها تقسیم کنید. برای هر مورد مقدار تقریبی بنویسید تا خرید اضافه کمتر شود.</p>
+                  <p>در پایان، بودجه را با لیست مقایسه کنید. هنگام دیدن تخفیف‌ها، بررسی کنید که محصول واقعاً مورد نیاز باشد و پیش از پایان تاریخ مصرف استفاده شود.</p>
+                </article>
+              </details>
+            </div></details>
+          <details id="footer-shopping">
+            <summary>راهنمای خرید</summary>
+            <div class="footer-resource-body">
+              <p>از «همه محصولات» یا دسته‌بندی‌ها، کالاها و قیمت‌های نمونه را مرور کنید. این نسخه پیش‌نمایش رابط فروشگاه است؛ سفارش و پرداخت واقعی انجام نمی‌شود.</p>
+              <a href="#products">مشاهده محصولات</a></div></details>
+          <details id="footer-delivery">
+            <summary>ارسال و تحویل</summary>
+            <div class="footer-resource-body">
+              <p>در نمونه فروشگاه، تحویل در محدوده تهران نمایش داده می‌شود. زمان، هزینه و محدوده قطعی ارسال باید پیش از ثبت سفارش توسط فروشگاه تأیید شود. در این نسخه سفارشی ارسال نمی‌شود.</p>
+            </div></details>
+          <details id="footer-returns">
+            <summary>بازگشت کالا</summary>
+            <div class="footer-resource-body">
+              <p>برای بررسی کالای آسیب‌دیده یا مغایرت خرید، شماره سفارش و تصویر کالا را برای پشتیبانی آماده کنید. شرایط نهایی بازگشت وابسته به نوع کالا و سیاست فروشگاه است. این متن راهنمای نمونه است.</p>
+            </div></details>
+          <details id="footer-faq">
+            <summary>پرسش‌های متداول</summary>
+            <div class="footer-resource-body">
+              <h3>آیا می‌توانم در این صفحه سفارش ثبت کنم؟</h3>
+              <p>خیر؛ محصولات و قیمت‌ها نمونه هستند و پرداخت فعال نیست.</p>
+              <h3>آیا عضویت در خبرنامه واقعی است؟</h3>
+              <p>در این پیش‌نمایش، فقط ایمیل شما در مرورگر همین دستگاه ذخیره می‌شود. ایمیلی ارسال نمی‌شود و با گزینه حذف، می‌توانید آن را پاک کنید.</p>
+            </div></details>
+          <details id="footer-privacy">
+            <summary>حریم خصوصی</summary>
+            <div class="footer-resource-body">
+              <p>فرم خبرنامه، پس از رضایت شما، فقط ایمیل را در حافظه محلی همین مرورگر ذخیره می‌کند. این داده به سرور ارسال نمی‌شود. برای حذف، از دکمه «حذف ایمیل ذخیره‌شده» استفاده کنید یا داده‌های این سایت را در مرورگر پاک کنید.</p>
+            </div></details>
+        </div>
+        <div class="footer-bottom flex flex-wrap items-center justify-between gap-4">
+          <p>© <span data-footer-year>۱۴۰۵</span> هایپرمارکت عصر جدید. همه حقوق محفوظ است.</p>
+          <a class="inline-flex items-center gap-2" href="#home">بازگشت به بالا <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5m-6 6 6-6 6 6" /></svg></a></div>
+        <p class="footer-preview-note">پیش‌نمایش فروشگاه · اطلاعات تماس، مزایا و روش‌های پرداخت نمونه‌اند؛ نشان رسمی تأیید یا درگاه پرداخت فعال وجود ندارد.</p>
+      </div>
+    </footer>
   </body>
 </html>
