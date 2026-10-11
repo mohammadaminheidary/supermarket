@@ -12,6 +12,7 @@
     <script type="module" src="./src/discounts.js"></script>
     <script type="module" src="./src/discount-carousel.js"></script>
     <script type="module" src="./src/bundle-scroll.js"></script>
+    <script type="module" src="./src/bestsellers.js"></script>
   </head>
   <body>
     <!-- Edge refraction is progressive enhancement; the glass has a CSS fallback. -->
@@ -850,6 +851,790 @@
           </div>
         </div>
         <p class="bundles-footer">یک انتخاب کامل برای هر روز شما · محصولات و قیمت‌های بسته‌ها نمونه هستند.</p>
+      </section>
+
+
+      <!-- Popularity, prices and catalog entries are sample content; bestseller controls use page-local state. -->
+      <section class="bestsellers" id="bestsellers" aria-labelledby="bestsellers-title">
+        <div class="bestsellers-layout">
+          <div class="bestsellers-intro">
+            <p class="product-section-kicker"><span aria-hidden="true">✦</span> محبوب‌های سبد خرید</p>
+            <h2 id="bestsellers-title">پرفروش‌ترین<br /> <em>محصولات</em></h2>
+            <p class="product-section-description">انتخاب‌های دوست‌داشتنی برای خریدهای هر روز؛ تازه، خوش‌طعم و همیشه همراه سفره شما.</p>
+            <p class="bestsellers-note"><span aria-hidden="true">♡</span> سه پیشنهاد برای سبد امروز شما</p>
+          </div>
+          <div class="bestsellers-products">
+            <article class="card catalog-product" data-product="milk" data-price="45000" aria-labelledby="bestseller-milk">
+              <div class="visual-shell">
+                <div class="photo-area">
+                  <span class="bestseller-rank"><span aria-hidden="true">✦</span> محبوب ۱</span>
+                  <button class="favorite" type="button" aria-label="افزودن شیر تازه به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/milk.svg" alt="شیر تازه" width="320" height="220" loading="lazy" />
+                  <span class="fresh">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 3c0 12-5 17-12 15C1 15 6 4 20 3ZM4 21 15 10" />
+                    </svg>تازه و روزانه</span>
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>لبنیات</span>
+                  <div class="rating">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.3-.9Z" />
+                    </svg>
+                    <b>۴.۹</b>
+                    <span class="reviews">(۸۴)</span>
+                  </div>
+                </div>
+                <h3 id="bestseller-milk">شیر تازه</h3>
+                <p class="description">پاستوریزه · بطری یک لیتری</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+                      <span class="old-price">۵۰٬۰۰۰</span>
+                      <div class="price">
+                        <strong>۴۵٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن شیر تازه به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <div class="quantity" role="group" aria-label="تعداد شیر تازه در سبد" hidden>
+                    <button class="increment" type="button" aria-label="افزایش تعداد شیر تازه">+</button>
+                    <span class="quantity-label">۱ عدد در سبد</span>
+                    <button class="decrement" type="button" aria-label="کاهش تعداد شیر تازه"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12h8" /></svg></button>
+                  </div>
+                  <p class="cart-note" role="status" aria-live="polite" aria-atomic="true">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" data-product="strawberries" data-price="148000" aria-labelledby="bestseller-strawberries">
+              <div class="visual-shell">
+                <div class="photo-area">
+                  <span class="bestseller-rank"><span aria-hidden="true">✦</span> محبوب ۲</span>
+                  <button class="favorite" type="button" aria-label="افزودن توت‌فرنگی تازه به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/strawberries.svg" alt="توت‌فرنگی تازه" width="320" height="220" loading="lazy" />
+                  <span class="fresh">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 3c0 12-5 17-12 15C1 15 6 4 20 3ZM4 21 15 10" />
+                    </svg>تازه و دست‌چین</span>
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>میوه و سبزیجات</span>
+                  <div class="rating">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.3-.9Z" />
+                    </svg>
+                    <b>۴.۸</b>
+                    <span class="reviews">(۳۶)</span>
+                  </div>
+                </div>
+                <h3 id="bestseller-strawberries">توت‌فرنگی تازه</h3>
+                <p class="description">شیرین و آبدار · بسته ۵۰۰ گرمی</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+                      <span class="old-price">۱۸۵٬۰۰۰</span>
+                      <div class="price">
+                        <strong>۱۴۸٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن توت‌فرنگی تازه به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <div class="quantity" role="group" aria-label="تعداد توت‌فرنگی تازه در سبد" hidden>
+                    <button class="increment" type="button" aria-label="افزایش تعداد توت‌فرنگی تازه">+</button>
+                    <span class="quantity-label">۱ عدد در سبد</span>
+                    <button class="decrement" type="button" aria-label="کاهش تعداد توت‌فرنگی تازه"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12h8" /></svg></button>
+                  </div>
+                  <p class="cart-note" role="status" aria-live="polite" aria-atomic="true">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" data-product="eggs" data-price="81000" aria-labelledby="bestseller-eggs">
+              <div class="visual-shell">
+                <div class="photo-area">
+                  <span class="bestseller-rank"><span aria-hidden="true">✦</span> محبوب ۳</span>
+                  <button class="favorite" type="button" aria-label="افزودن تخم‌مرغ تازه به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/eggs.svg" alt="تخم‌مرغ تازه" width="320" height="220" loading="lazy" />
+                  <span class="fresh">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 3c0 12-5 17-12 15C1 15 6 4 20 3ZM4 21 15 10" />
+                    </svg>بسته‌بندی روز</span>
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>پروتئین</span>
+                  <div class="rating">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.3-.9Z" />
+                    </svg>
+                    <b>۴.۸</b>
+                    <span class="reviews">(۶۳)</span>
+                  </div>
+                </div>
+                <h3 id="bestseller-eggs">تخم‌مرغ تازه</h3>
+                <p class="description">درشت و یکدست · بسته ۶ عددی</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+                      <span class="old-price">۹۰٬۰۰۰</span>
+                      <div class="price">
+                        <strong>۸۱٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن تخم‌مرغ تازه به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <div class="quantity" role="group" aria-label="تعداد تخم‌مرغ تازه در سبد" hidden>
+                    <button class="increment" type="button" aria-label="افزایش تعداد تخم‌مرغ تازه">+</button>
+                    <span class="quantity-label">۱ عدد در سبد</span>
+                    <button class="decrement" type="button" aria-label="کاهش تعداد تخم‌مرغ تازه"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M8 12h8" /></svg></button>
+                  </div>
+                  <p class="cart-note" role="status" aria-live="polite" aria-atomic="true">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <section class="all-products" id="products" aria-labelledby="all-products-title">
+        <header class="catalog-heading flex flex-wrap items-end justify-between gap-4">
+          <div>
+            <p class="product-section-kicker">از تازگی تا خریدهای روزمره</p>
+            <h2 id="all-products-title">همه محصولات</h2>
+            <p class="product-section-description">همه انتخاب‌های فروشگاه، یک‌جا پیش روی شما.</p>
+          </div>
+          <p class="catalog-count">۱۲ محصول <span aria-hidden="true">/</span> ۵ دسته‌بندی</p>
+        </header>
+        <ul class="catalog-categories flex flex-wrap gap-x-6 gap-y-2" aria-label="دسته‌بندی‌های موجود در مجموعه">
+          <li>میوه و سبزیجات</li><li>لبنیات</li><li>نان و صبحانه</li><li>پروتئین</li><li>شوینده و بهداشتی</li>
+        </ul>
+        <div class="catalog-grid">
+            <article class="card catalog-product" aria-labelledby="catalog-strawberries">
+              <div class="visual-shell">
+                <div class="photo-area">
+                  <span class="discount">۲۰٪ <span>تخفیف</span>
+                  </span>
+                  <button class="favorite" type="button" aria-label="افزودن توت‌فرنگی تازه به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/strawberries.svg" alt="توت‌فرنگی تازه" width="320" height="220" loading="lazy" />
+                  <span class="fresh">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 3c0 12-5 17-12 15C1 15 6 4 20 3ZM4 21 15 10" />
+                    </svg>تازه و دست‌چین</span>
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>میوه و سبزیجات</span>
+                  <div class="rating">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.3-.9Z" />
+                    </svg>
+                    <b>۴.۸</b>
+                    <span class="reviews">(۳۶)</span>
+                  </div>
+                </div>
+                <h3 id="catalog-strawberries">توت‌فرنگی تازه</h3>
+                <p class="description">شیرین و آبدار · بسته ۵۰۰ گرمی</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+                      <span class="old-price">۱۸۵٬۰۰۰</span>
+                      <div class="price">
+                        <strong>۱۴۸٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن توت‌فرنگی تازه به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <p class="cart-note">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" aria-labelledby="catalog-milk">
+              <div class="visual-shell">
+                <div class="photo-area">
+                  <span class="discount">۱۰٪ <span>تخفیف</span>
+                  </span>
+                  <button class="favorite" type="button" aria-label="افزودن شیر تازه به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/milk.svg" alt="شیر تازه" width="320" height="220" loading="lazy" />
+                  <span class="fresh">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 3c0 12-5 17-12 15C1 15 6 4 20 3ZM4 21 15 10" />
+                    </svg>تازه و روزانه</span>
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>لبنیات</span>
+                  <div class="rating">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.3-.9Z" />
+                    </svg>
+                    <b>۴.۹</b>
+                    <span class="reviews">(۸۴)</span>
+                  </div>
+                </div>
+                <h3 id="catalog-milk">شیر تازه</h3>
+                <p class="description">پاستوریزه · بطری یک لیتری</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+                      <span class="old-price">۵۰٬۰۰۰</span>
+                      <div class="price">
+                        <strong>۴۵٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن شیر تازه به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <p class="cart-note">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" aria-labelledby="catalog-bread">
+              <div class="visual-shell">
+                <div class="photo-area">
+                  <span class="discount">۲۰٪ <span>تخفیف</span>
+                  </span>
+                  <button class="favorite" type="button" aria-label="افزودن نان روستایی به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/bread.svg" alt="نان روستایی" width="320" height="220" loading="lazy" />
+                  <span class="fresh">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 3c0 12-5 17-12 15C1 15 6 4 20 3ZM4 21 15 10" />
+                    </svg>پخت روز</span>
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>نان و صبحانه</span>
+                  <div class="rating">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.3-.9Z" />
+                    </svg>
+                    <b>۴.۸</b>
+                    <span class="reviews">(۲۸)</span>
+                  </div>
+                </div>
+                <h3 id="catalog-bread">نان روستایی</h3>
+                <p class="description">تازه‌پخت · یک عدد ۴۰۰ گرمی</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+                      <span class="old-price">۹۰٬۰۰۰</span>
+                      <div class="price">
+                        <strong>۷۲٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن نان روستایی به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <p class="cart-note">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" aria-labelledby="catalog-eggs">
+              <div class="visual-shell">
+                <div class="photo-area">
+                  <span class="discount">۱۰٪ <span>تخفیف</span>
+                  </span>
+                  <button class="favorite" type="button" aria-label="افزودن تخم‌مرغ تازه به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/eggs.svg" alt="تخم‌مرغ تازه" width="320" height="220" loading="lazy" />
+                  <span class="fresh">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 3c0 12-5 17-12 15C1 15 6 4 20 3ZM4 21 15 10" />
+                    </svg>بسته‌بندی روز</span>
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>پروتئین</span>
+                  <div class="rating">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.3-.9Z" />
+                    </svg>
+                    <b>۴.۸</b>
+                    <span class="reviews">(۶۳)</span>
+                  </div>
+                </div>
+                <h3 id="catalog-eggs">تخم‌مرغ تازه</h3>
+                <p class="description">درشت و یکدست · بسته ۶ عددی</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+                      <span class="old-price">۹۰٬۰۰۰</span>
+                      <div class="price">
+                        <strong>۸۱٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن تخم‌مرغ تازه به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <p class="cart-note">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" aria-labelledby="catalog-strawberries-family">
+              <div class="visual-shell">
+                <div class="photo-area">
+                  <span class="discount">۲۰٪ <span>تخفیف</span>
+                  </span>
+                  <button class="favorite" type="button" aria-label="افزودن توت‌فرنگی خانواده به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/strawberries.svg" alt="توت‌فرنگی خانواده" width="320" height="220" loading="lazy" />
+                  <span class="fresh">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 3c0 12-5 17-12 15C1 15 6 4 20 3ZM4 21 15 10" />
+                    </svg>تازه و دست‌چین</span>
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>میوه و سبزیجات</span>
+                  <div class="rating">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.3-.9Z" />
+                    </svg>
+                    <b>۴.۸</b>
+                    <span class="reviews">(۳۶)</span>
+                  </div>
+                </div>
+                <h3 id="catalog-strawberries-family">توت‌فرنگی خانواده</h3>
+                <p class="description">شیرین و آبدار · بسته یک کیلوگرمی</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+                      <span class="old-price">۳۷۰٬۰۰۰</span>
+                      <div class="price">
+                        <strong>۲۹۶٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن توت‌فرنگی خانواده به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <p class="cart-note">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" aria-labelledby="catalog-milk-lowfat">
+              <div class="visual-shell">
+                <div class="photo-area">
+                  <span class="discount">۱۰٪ <span>تخفیف</span>
+                  </span>
+                  <button class="favorite" type="button" aria-label="افزودن شیر کم‌چرب به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/milk.svg" alt="شیر کم‌چرب" width="320" height="220" loading="lazy" />
+                  <span class="fresh">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 3c0 12-5 17-12 15C1 15 6 4 20 3ZM4 21 15 10" />
+                    </svg>تازه و روزانه</span>
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>لبنیات</span>
+                  <div class="rating">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.3-.9Z" />
+                    </svg>
+                    <b>۴.۹</b>
+                    <span class="reviews">(۸۴)</span>
+                  </div>
+                </div>
+                <h3 id="catalog-milk-lowfat">شیر کم‌چرب</h3>
+                <p class="description">کم‌چرب و پاستوریزه · یک لیتر</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+                      <span class="old-price">۶۰٬۰۰۰</span>
+                      <div class="price">
+                        <strong>۵۴٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن شیر کم‌چرب به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <p class="cart-note">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" aria-labelledby="catalog-bread-family">
+              <div class="visual-shell">
+                <div class="photo-area">
+                  <span class="discount">۲۰٪ <span>تخفیف</span>
+                  </span>
+                  <button class="favorite" type="button" aria-label="افزودن نان روستایی خانواده به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/bread.svg" alt="نان روستایی خانواده" width="320" height="220" loading="lazy" />
+                  <span class="fresh">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 3c0 12-5 17-12 15C1 15 6 4 20 3ZM4 21 15 10" />
+                    </svg>پخت روز</span>
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>نان و صبحانه</span>
+                  <div class="rating">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.3-.9Z" />
+                    </svg>
+                    <b>۴.۸</b>
+                    <span class="reviews">(۲۸)</span>
+                  </div>
+                </div>
+                <h3 id="catalog-bread-family">نان روستایی خانواده</h3>
+                <p class="description">تازه‌پخت · بسته دو عددی</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+                      <span class="old-price">۱۸۰٬۰۰۰</span>
+                      <div class="price">
+                        <strong>۱۴۴٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن نان روستایی خانواده به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <p class="cart-note">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" aria-labelledby="catalog-eggs-family">
+              <div class="visual-shell">
+                <div class="photo-area">
+                  <span class="discount">۱۰٪ <span>تخفیف</span>
+                  </span>
+                  <button class="favorite" type="button" aria-label="افزودن تخم‌مرغ خانواده به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/eggs.svg" alt="تخم‌مرغ خانواده" width="320" height="220" loading="lazy" />
+                  <span class="fresh">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20 3c0 12-5 17-12 15C1 15 6 4 20 3ZM4 21 15 10" />
+                    </svg>بسته‌بندی روز</span>
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>پروتئین</span>
+                  <div class="rating">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="m12 3 2.7 5.7 6.3.9-4.5 4.4 1.1 6.2-5.6-3-5.6 3 1.1-6.2L3 9.6l6.3-.9Z" />
+                    </svg>
+                    <b>۴.۸</b>
+                    <span class="reviews">(۶۳)</span>
+                  </div>
+                </div>
+                <h3 id="catalog-eggs-family">تخم‌مرغ خانواده</h3>
+                <p class="description">درشت و یکدست · بسته ۱۲ عددی</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+                      <span class="old-price">۱۸۰٬۰۰۰</span>
+                      <div class="price">
+                        <strong>۱۶۲٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن تخم‌مرغ خانواده به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <p class="cart-note">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" aria-labelledby="catalog-yogurt">
+              <div class="visual-shell">
+                <div class="photo-area">
+
+                  <button class="favorite" type="button" aria-label="افزودن ماست تازه به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/yogurt.svg" alt="ماست تازه" width="320" height="220" loading="lazy" />
+
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>لبنیات</span>
+                  <span>انتخاب روزانه</span>
+                </div>
+                <h3 id="catalog-yogurt">ماست تازه</h3>
+                <p class="description">ماست ساده · ظرف ۹۰۰ گرمی</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+
+                      <div class="price">
+                        <strong>۹۵٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن ماست تازه به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <p class="cart-note">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" aria-labelledby="catalog-doogh">
+              <div class="visual-shell">
+                <div class="photo-area">
+
+                  <button class="favorite" type="button" aria-label="افزودن دوغ سنتی به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/products/doogh.svg" alt="دوغ سنتی" width="320" height="220" loading="lazy" />
+
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>لبنیات</span>
+                  <span>انتخاب روزانه</span>
+                </div>
+                <h3 id="catalog-doogh">دوغ سنتی</h3>
+                <p class="description">خنک و خوش‌طعم · بطری یک لیتری</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+
+                      <div class="price">
+                        <strong>۴۰٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن دوغ سنتی به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <p class="cart-note">تضمین کیفیت و تازگی</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" aria-labelledby="catalog-laundry">
+              <div class="visual-shell">
+                <div class="photo-area">
+
+                  <button class="favorite" type="button" aria-label="افزودن مایع لباس‌شویی به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/promotions/laundry.svg" alt="مایع لباس‌شویی" width="320" height="220" loading="lazy" />
+
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>شوینده و بهداشتی</span>
+                  <span>انتخاب روزانه</span>
+                </div>
+                <h3 id="catalog-laundry">مایع لباس‌شویی</h3>
+                <p class="description">لباس‌های رنگی و روشن · ۲ لیتر</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+
+                      <div class="price">
+                        <strong>۱۸۰٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن مایع لباس‌شویی به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <p class="cart-note">تضمین کیفیت کالا</p>
+                </div>
+              </div>
+            </article>
+            <article class="card catalog-product" aria-labelledby="catalog-dishes">
+              <div class="visual-shell">
+                <div class="photo-area">
+
+                  <button class="favorite" type="button" aria-label="افزودن مایع ظرف‌شویی به علاقه‌مندی‌ها" aria-pressed="false">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0l-1 1-1-1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z" />
+                    </svg>
+                  </button>
+                  <img class="product" src="./assets/images/promotions/dishes.svg" alt="مایع ظرف‌شویی" width="320" height="220" loading="lazy" />
+
+                </div>
+              </div>
+              <div class="info">
+                <div class="meta">
+                  <span>شوینده و بهداشتی</span>
+                  <span>انتخاب روزانه</span>
+                </div>
+                <h3 id="catalog-dishes">مایع ظرف‌شویی</h3>
+                <p class="description">رایحه لیمو · ۷۵۰ میلی‌لیتر</p>
+                <div class="purchase-panel">
+                  <div class="price-row">
+                    <span class="stock">
+                      <svg viewBox="0 0 24 24" aria-hidden="true">
+                        <path d="m4 7 8-4 8 4v10l-8 4-8-4V7Zm0 0 8 4 8-4m-8 4v10M8 5l8 4" />
+                      </svg>موجود در انبار</span>
+                    <div class="prices">
+
+                      <div class="price">
+                        <strong>۷۵٬۰۰۰</strong>
+                        <span class="currency">تومان</span>
+                      </div>
+                    </div>
+                  </div>
+                  <button class="buy" type="button" aria-label="افزودن مایع ظرف‌شویی به سبد">
+                    <svg viewBox="0 0 24 24" aria-hidden="true">
+                      <path d="M6 8h12l1 12H5L6 8ZM9 8V6a3 3 0 0 1 6 0v2M12 12v4m-2-2h4" />
+                    </svg>افزودن به سبد</button>
+                  <p class="cart-note">تضمین کیفیت کالا</p>
+                </div>
+              </div>
+            </article>
+        </div>
+        <p class="catalog-preview-note">نمایش نمونه فروشگاه · محصولات، قیمت‌ها و ترتیب پرفروش‌ها برای پیش‌نمایش هستند.</p>
       </section>
     </main>
   </body>
