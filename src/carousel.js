@@ -6,7 +6,8 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
   const playIcon = carousel.querySelector('[data-play-icon]');
   const status = carousel.querySelector('[data-carousel-status]');
   const viewport = carousel.querySelector('.promotion-viewport, .product-promotion-viewport');
-  const mobile = carousel.hasAttribute('data-mobile-carousel') ? window.matchMedia('(max-width: 680px)') : null;
+  const mobile = carousel.hasAttribute('data-mobile-carousel') ? window.matchMedia('(max-width: 1023px)') : null;
+  const mobileHero = carousel.matches('.promotion-carousel') ? window.matchMedia('(max-width: 1023px)') : null;
   const enabled = () => !mobile || mobile.matches;
   const motion = window.matchMedia('(prefers-reduced-motion: reduce)');
   const number = new Intl.NumberFormat('fa-IR', { minimumIntegerDigits: 2 });
@@ -41,6 +42,7 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
   };
 
   const updatePlay = () => {
+    playButton.hidden = Boolean(mobileHero?.matches);
     playButton.setAttribute('aria-label', paused ? 'شروع پخش خودکار' : 'توقف پخش خودکار');
     playButton.setAttribute('aria-pressed', String(paused));
     playIcon.setAttribute('d', paused ? 'm9 5 10 7-10 7Z' : 'M9 6v12M15 6v12');
@@ -50,14 +52,20 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
   carousel.querySelector('[data-carousel-prev]').addEventListener('click', () => show(current - 1, true));
   carousel.querySelector('[data-carousel-next]').addEventListener('click', () => show(current + 1, true));
   dots.forEach((dot, i) => dot.addEventListener('click', () => show(i, true)));
-  playButton.addEventListener('click', () => { paused = !paused; updatePlay(); });
+  playButton.addEventListener('click', () => {
+    if (mobileHero?.matches) return;
+    paused = !paused;
+    updatePlay();
+  });
   carousel.addEventListener('keydown', (event) => {
     if (!enabled()) return;
     // RTL: the next slide is to the left.
     if (!['ArrowLeft', 'ArrowRight', 'Home', 'End'].includes(event.key)) return;
     event.preventDefault();
     // Keep keyboard focus on the stable controls when a CTA's slide becomes inert.
-    if (event.target.closest('.promotion-slide, .product-banner')) playButton.focus();
+    if (event.target.closest('.promotion-slide, .product-banner')) {
+      (playButton.hidden ? carousel.querySelector('[data-carousel-next]') : playButton).focus();
+    }
     const index = event.key === 'Home' ? 0 : event.key === 'End' ? slides.length - 1 : current + (event.key === 'ArrowLeft' ? 1 : -1);
     show(index, true);
   });
@@ -78,6 +86,16 @@ document.querySelectorAll('[data-carousel]').forEach((carousel) => {
   viewport.addEventListener('pointercancel', () => { touchStart = undefined; });
   document.addEventListener('visibilitychange', schedule);
   motion.addEventListener('change', () => { paused = motion.matches; updatePlay(); });
+  mobileHero?.addEventListener('change', () => {
+    // A desktop pause must not carry over into a mobile hero without a play control.
+    if (mobileHero.matches) {
+      paused = motion.matches;
+      if (document.activeElement === playButton) playButton.blur();
+    }
+    hovered = false;
+    focused = carousel.contains(document.activeElement);
+    updatePlay();
+  });
   mobile?.addEventListener('change', () => {
     touchStart = undefined;
     // A resize must not leave keyboard focus inside a newly hidden banner/control.

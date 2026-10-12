@@ -1,5 +1,5 @@
 // Enhance footer headings on mobile; the unenhanced HTML keeps all links readable.
-const footerMobile = window.matchMedia('(max-width: 680px)');
+const footerMobile = window.matchMedia('(max-width: 1023px)');
 const footerGroups = [...document.querySelectorAll('[data-footer-toggle]')].map((heading) => {
   const content = document.getElementById(heading.dataset.footerToggle);
   const button = document.createElement('button');

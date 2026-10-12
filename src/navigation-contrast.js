@@ -37,7 +37,7 @@ function brightness(color) {
 }
 
 export function initAdaptiveContrast(navbar) {
-  const wrapper = navbar.closest('.bottom-nav');
+  const wrapper = navbar.closest('.main-nav');
   const forcedColors = matchMedia('(forced-colors: active)');
   let frame = 0;
   let lightInk = false;
